@@ -1,9 +1,10 @@
 import requests
 
 captcha_apikey = "key_here"
+target_site_link = "https://link to a website login page/form"
 
 def submitCaptcha(site_key):
-    link = "http://2captcha.com/in.php?key={}&method=userrecaptcha&googlekey={}&pageurl=https://visitorbookings.hkgolfclub.org/Account/Login".format(captcha_apikey, site_key)
+    link = "http://2captcha.com/in.php?key={}&method=userrecaptcha&googlekey={}&pageurl={}".format(captcha_apikey, site_key, target_site_link)
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36'
     }
