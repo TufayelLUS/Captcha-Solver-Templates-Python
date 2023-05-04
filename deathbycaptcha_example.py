@@ -22,7 +22,7 @@ def submitCaptcha(site_key):
     except:
         print("Failed to open {}".format(link))
         return "-1"
-    task_id = re.findall(r'&captcha=(.+?)&', resp)
+    task_id = re.findall(r'captcha=(.+?)&', resp)
     if len(task_id) == 1:
         print("Captcha submitted! Task id is: {}".format(task_id[0]))
         return task_id[0]
