@@ -41,8 +41,8 @@ def checkRecaptchaStatus(task_id):
     except:
         print("Failed to open {}".format(link))
         return "-1"
-    result_token = re.findall(r'&text=(.+?)&', resp)
-    if len(result_token) == 1:
+    result_token = re.findall(r'text=(.+?)\&is', resp)
+    if len(result_token) == 1 and result_token[0].strip() != "":
         print("Captcha solved! Result token is: {}".format(result_token[0]))
         return result_token[0]
     else:
